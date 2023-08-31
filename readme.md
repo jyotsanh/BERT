@@ -1,6 +1,6 @@
 # BERT Transformer Learning Journey
 
-![BERT Transformer](images/bert_transformer.jpg)
+![BERT Transformer](images/base.png)
 
 ## Introduction
 
@@ -54,4 +54,4 @@ You can reach me at [hamaljyotsan@gmail.com](mailto:hamaljyotsan@gmail.com) for 
 
 Thank you for joining me on this exciting journey of learning, implementation, and exploration!
 
-![Keep Learning](images/keep_learning.jpg)
+![Keep Learning](images/bert.jpg)
