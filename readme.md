@@ -25,12 +25,14 @@ As of today, I have embarked on this exciting learning journey. I have set up th
 I am taking a comprehensive approach to learning, which includes:
 
 1. **Understanding Transformer Architecture**: Before diving into BERT, I am ensuring a solid grasp of the core transformer architecture, which forms the basis for BERT.
+2. **Understanding Embedding Algorithms**: Begin by delving into the fundamentals of word embeddings, such as Word2Vec, GloVe, and FastText. Understand how these algorithms map words or subwords to continuous vector spaces.
+3. **Deep Dive into Self-Attention Mechanisms**: Implement self-attention mechanisms from scratch to gain a hands-on understanding of their inner workings. 
 
-2. **Learning BERT Intuitively**: I believe that a deeper understanding of the mathematics behind BERT is essential. I am dedicating time to study intuitive math concepts related to linear algebra and attention mechanisms.
+4. **Learning BERT Intuitively**: I believe that a deeper understanding of the mathematics behind BERT is essential. I am dedicating time to study intuitive math concepts related to linear algebra and attention mechanisms.
 
-3. **Hands-on Implementation**: Alongside theory, I am actively implementing BERT using PyTorch. This hands-on approach helps me solidify my understanding and overcome implementation challenges.
+5. **Hands-on Implementation**: Alongside theory, I am actively implementing BERT using PyTorch. This hands-on approach helps me solidify my understanding and overcome implementation challenges.
 
-4. **Building a Language Model**: Once I'm confident with BERT, I will extend my knowledge to construct a Language Model using the principles I've learned.
+6. **Building a Language Model**: Once I'm confident with BERT, I will extend my knowledge to construct a Language Model using the principles I've learned.
 
 ## Future Steps
 
