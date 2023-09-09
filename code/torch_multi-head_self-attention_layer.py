@@ -7,7 +7,9 @@ def scaled_dot_product_attention(query, key, value, mask=None):
     key_dim = key.size(-1)
     print(f"shape of key : {key.size()}")
     print(f"shape of query : {query.size()}")
-
+    print('---------------------------------------------------')
+    print(f"Attention scores : {torch.matmul(query, key.T)}")
+    print('-----------------------------------------------------')
     scaled_scores = torch.matmul(query, key.T) / math.sqrt(key_dim)
     print(f"Scaled Attention scores [query x key] : {scaled_scores}")
 
