@@ -8,10 +8,10 @@ Welcome to my BERT Transformer Learning Journey! In this repository, I am docume
 
 ## Current Progress
 
-Learned every process on how BERT Encoder and it's decoder works . Now proceeding towards Masked Language Modeling (MLM) of BERT in Game of Throne book dataset.
+So, Far I have Learned input embedding, positional embedding, Mult-Head Self-Attention, layer Normalization every process on how BERT Encoder and it's decoder works . Now proceeding towards Masked Language Modeling (MLM) of BERT in Game of Throne book dataset.
 First Appraoch:
-      1. MLM the BERT-large model in GOT text data
-      2. Prepare a Question/Answering data in SQuAD format to train the model for Question /Answering
+- MLM the BERT-large model in GOT text data
+- Prepare a Question/Answering data in SQuAD format to train the model for Question /Answering
 ## Repository Structure
 
 - `code/`: This directory contains the Python code for implementing BERT using PyTorch. I am breaking down the implementation into manageable modules to better understand each component.
