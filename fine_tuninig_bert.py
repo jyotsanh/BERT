@@ -11,6 +11,7 @@ model = BertForMaskedLM.from_pretrained('bert-large-uncased')
 # Initialize the optimizer
 optimizer = AdamW(model.parameters(), lr=1e-5)
 
+
 def mask_random_word(sentence):
     # Tokenize the sentence into words
     words = nltk.word_tokenize(sentence)
@@ -47,6 +48,9 @@ def process_book(filename):
 
                 # Forward pass
                 outputs = model(**inputs, labels=labels)
+                # -> As you can see we input the model with double '**' sign it means it unpackas the dict like below:
+# -> we can also pass the input like this model(input_ids=inputs["input_ids"], attention_mask=inputs["attention_mask"], labels=labels)
+                
                 loss = outputs.loss
 
                 # Backward pass and optimize
