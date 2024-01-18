@@ -49,6 +49,7 @@ def main():
                 #first line of text file is read
                 i+=1
                 
+                print(f"Line no : {i} finished")
                 sentences = nltk.sent_tokenize(line)
                 
                 #sentence is seperated above
@@ -88,11 +89,10 @@ def main():
 
                         print(f"Batch: {i}, Loss: {loss.item()}")
 
-                if i % 100 == 0:
+                if i % 1000 == 0 or i == 27499:
                     model.save_pretrained(f"./models/model_{i}")
                     print(f"Model saved at ./models/model_{i}")
-                if i==1000:
-                    break
+                
                 
 # sentence = "Hello !, Brother's what's up ? what are you doing ?"
 

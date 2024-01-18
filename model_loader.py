@@ -1,42 +1,67 @@
 from transformers import BertModel, BertTokenizer
-from transformers import BertTokenizer, BertForMaskedLM, AdamW
 import torch
 
 # Load pretrained model/tokenizer
-tokenizer = BertTokenizer.from_pretrained('bert-large-uncased')
-model = BertModel.from_pretrained('./best_models/model_1000')  # replace with the path to your saved model
-bert_model = BertModel.from_pretrained('bert-large-uncased')
-# Tokenize input
-word1=input("Enter word : ")
-word2 = input("Enter another : ")
+tokenizer2 = BertTokenizer.from_pretrained('bert-large-uncased')
+model2 = BertModel.from_pretrained('./best_models/model_1000') 
 
-input_ids = tokenizer.encode(f"{word1} {word2}", add_special_tokens=True)
+
+
+tokenizer = BertTokenizer.from_pretrained('bert-large-uncased')
+model = BertModel.from_pretrained('bert-large-uncased')  # replace with the path to your saved model
+
+# Words to compare
+word1 = "HOUSE"
+word2 = "TYRELL"
+
+# Tokenize input
+input_ids1 = tokenizer.encode(word1, add_special_tokens=True)
+input_ids2 = tokenizer.encode(word2, add_special_tokens=True)
+
+input_ids1_1= tokenizer2.encode(word1, add_special_tokens=True)
+input_ids2_2 = tokenizer2.encode(word2, add_special_tokens=True)
+
 
 # Convert input to PyTorch tensors
-input_ids = torch.tensor(input_ids).unsqueeze(0)
+input_ids1 = torch.tensor(input_ids1).unsqueeze(0)
+input_ids2 = torch.tensor(input_ids2).unsqueeze(0)
+
+# Convert input to PyTorch tensors
+input_ids1_1 = torch.tensor(input_ids1_1).unsqueeze(0)
+input_ids2_2 = torch.tensor(input_ids2_2).unsqueeze(0)
 
 # Get embeddings
-outputs = model(input_ids)
+outputs1 = model(input_ids1)
+outputs2 = model(input_ids2)
+
+# Get embeddings
+outputs1_1 = model2(input_ids1_1)
+outputs2_1 = model2(input_ids2_2)
 
 
 
-# Get the embeddings for "Jon" and "Aegon"
-jon_embedding = outputs[0][0][1]
-aegon_embedding = outputs[0][0][2]
+# Get the embeddings for the words
+word1_embedding = outputs1[0][0][1]
+word2_embedding = outputs2[0][0][1]
+
+
+
 
 # Calculate Euclidean distance
-
-euclidean_distance = torch.dist(jon_embedding, aegon_embedding)
+euclidean_distance = torch.dist(word1_embedding, word2_embedding)
 
 print(f"The Euclidean distance between the embeddings for '{word1}' and '{word2}' is {euclidean_distance.item()}")
 
 
-outputs = bert_model(input_ids)
-# Get the embeddings for "Jon" and "Aegon"
-jon_embedding = outputs[0][0][1]
-aegon_embedding = outputs[0][0][2]
+
+# Get the embeddings for the words
+word1_embedding = outputs1_1[0][0][1]
+word2_embedding = outputs2_1[0][0][1]
+
+
+
 
 # Calculate Euclidean distance
+euclidean_distance = torch.dist(word1_embedding, word2_embedding)
 
-euclidean_distance = torch.dist(jon_embedding, aegon_embedding)
-print(f"The Euclidean distance between the embeddings for '{word1}' and '{word2}' for not trained model is {euclidean_distance.item()}")
+print(f"The Euclidean distance between the embeddings for '{word1}' and '{word2}' is {euclidean_distance.item()}")
